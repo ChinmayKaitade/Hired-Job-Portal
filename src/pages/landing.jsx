@@ -7,6 +7,7 @@ import {
 import companies from "../data/companies.json";
 import { Link } from "react-router-dom";
 import Autoplay from "embla-carousel-autoplay";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const LandingPage = () => {
   return (
@@ -67,9 +68,28 @@ const LandingPage = () => {
       {/* banner */}
       <img src="/banner.jpeg" className="w-full" />
 
-      <section>{/* cards */}</section>
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {/* cards */}
+        <Card>
+          <CardHeader>
+            <CardTitle>For Job Seekers</CardTitle>
+          </CardHeader>
+          <CardContent>
+            Search and apply for jobs, track applications, and more.
+          </CardContent>
+        </Card>
 
-      {/* accordion */}
+        <Card>
+          <CardHeader>
+            <CardTitle>For Employers</CardTitle>
+          </CardHeader>
+          <CardContent>
+            Post jobs, manage applications, and find the best candidates.
+          </CardContent>
+        </Card>
+      </section>
+
+      {/* FAQs accordion */}
     </main>
   );
 };
