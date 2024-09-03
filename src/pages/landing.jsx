@@ -5,9 +5,16 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 import companies from "../data/companies.json";
+import faqs from "../data/faq.json";
 import { Link } from "react-router-dom";
 import Autoplay from "embla-carousel-autoplay";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const LandingPage = () => {
   return (
@@ -68,8 +75,8 @@ const LandingPage = () => {
       {/* banner */}
       <img src="/banner.jpeg" className="w-full" />
 
+      {/* cards */}
       <section className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {/* cards */}
         <Card>
           <CardHeader>
             <CardTitle>For Job Seekers</CardTitle>
@@ -90,6 +97,16 @@ const LandingPage = () => {
       </section>
 
       {/* FAQs accordion */}
+      <Accordion type="single" collapsible>
+        {faqs.map((faq, index) => {
+          return (
+            <AccordionItem key={index} value={`item-1${index + 1}`}>
+              <AccordionTrigger>{faq.question}</AccordionTrigger>
+              <AccordionContent>{faq.answer}</AccordionContent>
+            </AccordionItem>
+          );
+        })}
+      </Accordion>
     </main>
   );
 };
