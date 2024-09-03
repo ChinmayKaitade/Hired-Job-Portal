@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
-// import { Button } from "./ui/button";
-import {
-  SignedIn,
-  SignedOut,
-  SignInButton,
-  UserButton,
-} from "@clerk/clerk-react";
+import { Button } from "./ui/button";
+// import {
+//   SignedIn,
+//   SignedOut,
+//   SignInButton,
+//   UserButton,
+// } from "@clerk/clerk-react";
 
 const Header = () => {
   return (
@@ -17,15 +17,15 @@ const Header = () => {
         </Link>
 
         {/* login button */}
-        {/* <Button variant="outline">Login</Button> */}
+        <Button variant="outline">Login</Button>
 
         {/* Clerk SignOut Buttons */}
-        <SignedOut>
+        {/* <SignedOut>
           <SignInButton />
         </SignedOut>
         <SignedIn>
           <UserButton />
-        </SignedIn>
+        </SignedIn> */}
       </nav>
     </>
   );
