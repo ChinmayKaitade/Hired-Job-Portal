@@ -1,8 +1,9 @@
-import { useUser } from "@clerk/clerk-react";
+/* eslint-disable react/prop-types */
 import { Navigate, useLocation } from "react-router-dom";
+import { useUser } from "@clerk/clerk-react";
 
 const ProtectedRoute = ({ children }) => {
-  const { isSignedIn, user, isLoaded } = useUser();
+  const { isSignedIn, isLoaded, user } = useUser();
   const { pathname } = useLocation();
 
   if (isLoaded && !isSignedIn && isSignedIn !== undefined) {
@@ -12,7 +13,7 @@ const ProtectedRoute = ({ children }) => {
   // check onboarding status
   if (
     user !== undefined &&
-    !user?.unsafeMetadata.role &&
+    !user?.unsafeMetadata?.role &&
     pathname !== "/onboarding"
   )
     return <Navigate to="/onboarding" />;
