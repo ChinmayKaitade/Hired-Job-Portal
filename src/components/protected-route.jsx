@@ -10,7 +10,6 @@ const ProtectedRoute = ({ children }) => {
     return <Navigate to="/?sign-in=true" />;
   }
 
-  // check onboarding status
   if (
     user !== undefined &&
     !user?.unsafeMetadata?.role &&

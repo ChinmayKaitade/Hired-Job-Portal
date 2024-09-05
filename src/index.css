@@ -59,14 +59,10 @@
   }
 }
 
-@layer utilities {
-  .gradient {
-    @apply bg-gradient-to-br from-gray-500 via-gray-200 to-white;
-  }
-
-  .gradient-title {
-    @apply gradient text-transparent bg-clip-text;
-  }
+.wmde-markdown ul {
+  list-style-type: disc;
+  padding-left: 25px;
+  color: white;
 }
 
 @layer base {
@@ -75,5 +71,14 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .gradient {
+    @apply bg-gradient-to-br from-gray-500 via-gray-200 to-white;
+  }
+  .gradient-title {
+    @apply gradient text-transparent bg-clip-text;
   }
 }
